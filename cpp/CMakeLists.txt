@@ -9,6 +9,13 @@ endif()
 
 include_directories(${PROJECT_SOURCE_DIR})
 
+# add demo test algorithm
+file(GLOB test_alg_source_files "${PROJECT_SOURCE_DIR}/demo/test_alg/*.cpp")
+foreach (source_file ${test_alg_source_files})
+    get_filename_component(target_name ${source_file} NAME_WE)
+    add_executable(${target_name} ${source_file})
+endforeach ()
+
 add_executable(varint demo/varint.cc)
 add_executable(dynamic_array demo/dynamic_array.cc)
 
