@@ -16,7 +16,10 @@ foreach (source_file ${test_alg_source_files})
     add_executable(${target_name} ${source_file})
 endforeach ()
 
+# search all util source files
+file(GLOB util_sources "${PROJECT_SOURCE_DIR}/util/*.cc")
+
 add_executable(varint demo/varint.cc)
 add_executable(dynamic_array demo/dynamic_array.cc)
 
-add_executable(skiplist_test structure/skiplist_test.cc structure/skiplist.cc)
+add_executable(skiplist_test structure/skiplist_test.cc structure/skiplist.cc ${util_sources})

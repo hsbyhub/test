@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <sys/time.h>
 
-uint64_t NowMicros() {
+inline uint64_t NowMicros() {
     static constexpr uint64_t kUsecondsPerSecond = 1000 * 1000;
     struct timeval tv;
     gettimeofday(&tv, nullptr);

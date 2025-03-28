@@ -41,7 +41,7 @@ public:
     uint64_t Get(uint64_t key);
 
     // TODO: for test
-    int TestPutIter() { return test_get_iter_;}
+    int TestPutIter() { return test_put_iter_;}
     int TestGetIter() { return test_get_iter_;}
     void TestDump(std::ostream& os);
 
